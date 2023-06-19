@@ -82,7 +82,9 @@ doSomething := func() {
         }
     } else {
         pv.ReuseRemaining--
+        pv.protos.Reset()
     }
+    defer p.Put(pv)
 
     // ... construct objects ...
 }
